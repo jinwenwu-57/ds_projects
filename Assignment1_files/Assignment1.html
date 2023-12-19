@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>A1 #</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Assignment1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Assignment1_files/libs/quarto-html/quarto.js"></script>
+<script src="Assignment1_files/libs/quarto-html/popper.min.js"></script>
+<script src="Assignment1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Assignment1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Assignment1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Assignment1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Assignment1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Assignment1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Assignment1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A1 #</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the list</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> [<span class="dv">3007</span>, <span class="dv">3067</span>, <span class="dv">3244</span>, <span class="dv">3375</span>,<span class="dv">3574</span>, <span class="dv">3828</span>, <span class="dv">4146</span>, <span class="dv">4336</span>, <span class="dv">4696</span>, <span class="dv">5032</span>,<span class="dv">5234</span>,<span class="dv">5609</span>,<span class="dv">6094</span>,<span class="dv">6726</span>,<span class="dv">7226</span>,<span class="dv">7801</span>,<span class="dv">8592</span>,<span class="dv">9453</span>,<span class="dv">10565</span>,<span class="dv">11674</span>,<span class="dv">12575</span>,<span class="dv">13976</span>,<span class="dv">14434</span>,<span class="dv">15544</span>,<span class="dv">17121</span>,<span class="dv">18237</span>,<span class="dv">19071</span>,<span class="dv">20039</span>,<span class="dv">21417</span>,<span class="dv">22857</span>,<span class="dv">23889</span>,<span class="dv">24342</span>,<span class="dv">25419</span>,<span class="dv">26387</span>,<span class="dv">27695</span>,<span class="dv">28691</span>,<span class="dv">29968</span>,<span class="dv">31459</span>,<span class="dv">32854</span>,<span class="dv">34515</span>,<span class="dv">36330</span>,<span class="dv">37134</span>,<span class="dv">37998</span>,<span class="dv">39490</span>,<span class="dv">41725</span>,<span class="dv">44123</span>,<span class="dv">46302</span>,<span class="dv">48050</span>,<span class="dv">48570</span>,<span class="dv">47195</span>,<span class="dv">48651</span>,<span class="dv">50066</span>,<span class="dv">51784</span>,<span class="dv">53291</span>,<span class="dv">55124</span>,<span class="dv">56763</span>,<span class="dv">57867</span>,<span class="dv">59915</span>,<span class="dv">62805</span>,<span class="dv">65095</span>,<span class="dv">63028</span>,<span class="dv">69288</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question A1.1: Create a new list for GDP_increase</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>GDP_increase <span class="op">=</span> [T[i<span class="op">+</span><span class="dv">1</span>]<span class="op">-</span>T[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="bu">len</span>(T)<span class="op">-</span><span class="dv">1</span>)]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(GDP_increase)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[60, 177, 131, 199, 254, 318, 190, 360, 336, 202, 375, 485, 632, 500, 575, 791, 861, 1112, 1109, 901, 1401, 458, 1110, 1577, 1116, 834, 968, 1378, 1440, 1032, 453, 1077, 968, 1308, 996, 1277, 1491, 1395, 1661, 1815, 804, 864, 1492, 2235, 2398, 2179, 1748, 520, -1375, 1456, 1415, 1718, 1507, 1833, 1639, 1104, 2048, 2890, 2290, -2067, 6260]</code></pre>
+</div>
+</div>
+<section id="a1.1" class="level2">
+<h2 class="anchored" data-anchor-id="a1.1">A1.1</h2>
+<p><strong>GDP_increase: [60, 177, 131, 199, 254, 318, 190, 360, 336, 202, 375, 485, 632, 500, 575, 791, 861, 1112, 1109, 901, 1401, 458, 1110, 1577, 1116, 834, 968, 1378, 1440, 1032, 453, 1077, 968, 1308, 996, 1277, 1491, 1395, 1661, 1815, 804, 864, 1492, 2235, 2398, 2179, 1748, 520, -1375, 1456, 1415, 1718, 1507, 1833, 1639, 1104, 2048, 2890, 2290, -2067, 6260]</strong></p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question A1.2: Use GDP_increase to find the maximum gap size, i.e, the maximum increase in GDP per capita</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Maximum <span class="op">=</span> <span class="bu">max</span>(GDP_increase)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Maximum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>6260</code></pre>
+</div>
+</div>
+</section>
+<section id="a1.2" class="level2">
+<h2 class="anchored" data-anchor-id="a1.2">A1.2</h2>
+<p><strong>Maximum = 6260.</strong></p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question A.1.3: Find the percentage of gaps that have size greater than $1000.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>GDP_greater_than_1000 <span class="op">=</span> [num <span class="cf">for</span> num <span class="kw">in</span> GDP_increase <span class="cf">if</span> num <span class="op">&gt;</span> <span class="dv">1000</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Percentage_GDP_greater_than_1000 <span class="op">=</span> (<span class="bu">len</span>(GDP_greater_than_1000)<span class="op">/</span><span class="bu">len</span>(GDP_increase))<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Percentage_GDP_greater_than_1000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>52.459016393442624</code></pre>
+</div>
+</div>
+</section>
+<section id="a1.3" class="level2">
+<h2 class="anchored" data-anchor-id="a1.3">A1.3</h2>
+<p><strong>Percentage_GDP_greater_than_1000 = 52.459016393442624%</strong></p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question A.1.4: List of years in which the GDP per capita increase was more than $2000 </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The list starts from 1960 to 2021. Because of len(GDP_increase) + 1 = len(T). We need to restort the years count.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>years_with_high_increase <span class="op">=</span> [<span class="dv">1960</span> <span class="op">+</span> i <span class="op">+</span> <span class="dv">1</span> <span class="cf">for</span> i, increase <span class="kw">in</span> <span class="bu">enumerate</span>(GDP_increase) <span class="cf">if</span> increase <span class="op">&gt;</span> <span class="dv">2000</span>]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>years_with_high_increase_alt <span class="op">=</span> [<span class="dv">1960</span> <span class="op">+</span> i <span class="cf">for</span> i, increase <span class="kw">in</span> <span class="bu">enumerate</span>(GDP_increase, start<span class="op">=</span><span class="dv">1</span>) <span class="cf">if</span> increase <span class="op">&gt;</span> <span class="dv">2000</span>]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># i is the index, returned by  enumerate(GDP_increase). i starts from 0 for index</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># have start =1 inside of enumerate call. </span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(years_with_high_increase)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(years_with_high_increase_alt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2004, 2005, 2006, 2017, 2018, 2019, 2021]
+[2004, 2005, 2006, 2017, 2018, 2019, 2021]</code></pre>
+</div>
+</div>
+</section>
+<section id="a1.4" class="level2">
+<h2 class="anchored" data-anchor-id="a1.4">A1.4</h2>
+<p><strong>years_with_high_increase = [2004, 2005, 2006, 2017, 2018, 2019, 2021].</strong></p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Question A.1.5: Difference between the maximum and minimum GDP per capita values for each of the 5 year-periods &amp; find increase minimum</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the index of 1976 </span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>index_1976 <span class="op">=</span> <span class="dv">1976</span><span class="op">-</span><span class="dv">1960</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Iterates through T in 5-year chunks, starting from the index corresponding to 1976 with step value = 5. </span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>differences <span class="op">=</span> [<span class="bu">max</span>(T[i:i<span class="op">+</span><span class="dv">5</span>]) <span class="op">-</span> <span class="bu">min</span>(T[i:i<span class="op">+</span><span class="dv">5</span>]) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(index_1976, <span class="bu">len</span>(T)<span class="op">-</span><span class="dv">4</span>, <span class="dv">5</span>)]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>min_diff <span class="op">=</span> <span class="bu">min</span>(differences)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>min_diff_period_start <span class="op">=</span> <span class="dv">1976</span> <span class="op">+</span> <span class="dv">5</span> <span class="op">*</span> differences.index(min_diff)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>min_diff_period_end <span class="op">=</span> min_diff_period_start <span class="op">+</span> <span class="dv">4</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Differences for each 5-year period starting from 1976: </span><span class="sc">{</span>differences<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The 5-year period with the smallest difference was </span><span class="sc">{</span>min_diff_period_start<span class="sc">}</span><span class="ss">-</span><span class="sc">{</span>min_diff_period_end<span class="sc">}</span><span class="ss">, with a difference of </span><span class="sc">{</span>min_diff<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Differences for each 5-year period starting from 1976: [3983, 4261, 4818, 4349, 6362, 6989, 2349, 6697, 7228]
+The 5-year period with the smallest difference was 2006-2010, with a difference of 2349.</code></pre>
+</div>
+</div>
+</section>
+<section id="a1.5" class="level2">
+<h2 class="anchored" data-anchor-id="a1.5">A1.5</h2>
+<section id="a1.5.1" class="level3">
+<h3 class="anchored" data-anchor-id="a1.5.1">A1.5.1</h3>
+<p><strong>Differences for each 5-year period starting from 1976: [3983, 4261, 4818, 4349, 6362, 6989, 2349, 6697, 7228].</strong> ### A1.5.2 ###</p>
+<p><strong>The 5-year period with the smallest difference was 2006-2010, with a difference of 2349.</strong></p>
+</section>
+</section>
+<section id="a2" class="level1">
+<h1>A2</h1>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>majors_minors <span class="op">=</span> majors_minors <span class="op">=</span> [[<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>,  <span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>,  <span class="st">'Social Sciences / Education'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Cognitive Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Music'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Data Science'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>, <span class="st">'jazz'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Social Sciences / Education'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>,  <span class="st">'Social Sciences / Education'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Econ'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">''</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>,  <span class="st">'Social Sciences / Education'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Social Sciences / Education'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Social Sciences / Education'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Humanities / Communications'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>,  <span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Social Sciences / Education'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Humanities / Communications'</span>,  <span class="st">'Social Sciences / Education'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>,  <span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>, <span class="st">'Music'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Humanities / Communications'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Humanities / Communications'</span>, <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Social Sciences / Education'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>], [<span class="st">'Physical Sciences / Natural Sciences / Engineering'</span>,  <span class="st">'Math / Statistics / Computer Science'</span>], [<span class="st">'Math / Statistics / Computer Science'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A2.1: Students have major / minor in any three of the above mentioned four areas</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>three_majors <span class="op">=</span> [major_count <span class="cf">for</span> major_count <span class="kw">in</span> majors_minors <span class="cf">if</span> <span class="bu">len</span>(major_count) <span class="op">==</span> <span class="dv">3</span>]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(three_majors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>6</code></pre>
+</div>
+</div>
+<section id="a2.1" class="level2">
+<h2 class="anchored" data-anchor-id="a2.1">A2.1</h2>
+<p><strong>6 students have major/minor in any three of the four mentioned areas.</strong></p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A2.2: students have Math / Statistics / Computer Science as an area of their major / minor</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>math_major <span class="op">=</span> [math_count <span class="cf">for</span> math_count <span class="kw">in</span> majors_minors <span class="cf">if</span> <span class="st">"Math / Statistics / Computer Science"</span> <span class="kw">in</span> math_count]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(math_major)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>105</code></pre>
+</div>
+</div>
+</section>
+<section id="a2.2" class="level2">
+<h2 class="anchored" data-anchor-id="a2.2">A2.2</h2>
+<p><strong>105 students have major/minor in Math / Statistics / Computer Science areas.</strong></p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A2.3: Students only have Math / Statistics / Computer Science as an area of their major / minor</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>only_math_major <span class="op">=</span> [student <span class="cf">for</span> student <span class="kw">in</span> majors_minors <span class="cf">if</span> <span class="bu">len</span>(student) <span class="op">==</span> <span class="dv">1</span> <span class="kw">and</span> <span class="st">"Math / Statistics / Computer Science"</span> <span class="kw">in</span> student]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(only_math_major)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>44</code></pre>
+</div>
+</div>
+</section>
+<section id="a2.3" class="level2">
+<h2 class="anchored" data-anchor-id="a2.3">A2.3</h2>
+<p><strong>44 students have major/minor only in Math / Statistics / Computer Science areas.</strong></p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A2.4: Using list comprehension to find students with only "Math / Statistics / Computer Science" and "Social Sciences / Education"</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>desired_majors <span class="op">=</span> [</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Math / Statistics / Computer Science"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Social Sciences / Education"</span>]</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>math_and_social_sci_dual <span class="op">=</span> [</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    student <span class="cf">for</span> student <span class="kw">in</span> majors_minors </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">all</span>(major <span class="kw">in</span> student <span class="cf">for</span> major <span class="kw">in</span> desired_majors) <span class="kw">and</span> <span class="bu">len</span>(student) <span class="op">==</span> <span class="dv">2</span>]</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>math_and_social_sci <span class="op">=</span> [</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    student <span class="cf">for</span> student <span class="kw">in</span> majors_minors </span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">all</span>(major <span class="kw">in</span> student <span class="cf">for</span> major <span class="kw">in</span> desired_majors)]</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(math_and_social_sci_dual))</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(math_and_social_sci))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>29
+34</code></pre>
+</div>
+</div>
+</section>
+<section id="a2.4" class="level2">
+<h2 class="anchored" data-anchor-id="a2.4">A2.4</h2>
+<p><strong>29</strong> students double major/minor in Math / Statistics / Computer Science and “Social Sciences / Education area.**</p>
+<p><strong>34</strong> students have majors/minors in Math / Statistics / Computer Science and “Social Sciences / Education area in thier academic plan (since 5 students have declared more than two major/minor in their selections.**</p>
+</section>
+</section>
+<section id="a3" class="level1">
+<h1>A3</h1>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>starbucks_drinks_nutrition<span class="op">=</span>{<span class="st">'Cool Lime Starbucks Refreshers™ Beverage'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">45</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">11</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Strawberry Acai Starbucks Refreshers™ Beverage'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">80</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">18</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Very Berry Hibiscus Starbucks Refreshers™ Beverage'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">60</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">14</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Evolution Fresh™ Organic Ginger Limeade'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">110</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">28</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}], <span class="st">'Iced Coffee'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}], <span class="st">'Iced Espresso Classics - Vanilla Latte'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">130</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">2.5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">21</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">65</span>}], <span class="st">'Iced Espresso Classics - Caffe Mocha'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">140</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">2.5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">23</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">90</span>}], <span class="st">'Iced Espresso Classics - Caramel Macchiato'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">130</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">2.5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">21</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">65</span>}], <span class="st">'Shaken Sweet Tea'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">80</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">19</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Tazo® Bottled Berry Blossom White'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">60</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">15</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Tazo® Bottled Black Mango'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">150</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">38</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">15</span>}], <span class="st">'Tazo® Bottled Black with Lemon'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">140</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">35</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Tazo® Bottled Brambleberry'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">140</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">35</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">15</span>}], <span class="st">'Tazo® Bottled Giant Peach'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">150</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">37</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">15</span>}], <span class="st">'Tazo® Bottled Iced Passion'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">70</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">17</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Tazo® Bottled Lemon Ginger'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">120</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">31</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Tazo® Bottled Organic Black Lemonade'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">140</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">35</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Tazo® Bottled Organic Iced Black Tea'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">60</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">15</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Tazo® Bottled Organic Iced Green Tea'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">120</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">31</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Tazo® Bottled Plum Pomegranate'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">140</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">35</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Tazo® Bottled Tazoberry'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">150</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">38</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">15</span>}], <span class="st">'Tazo® Bottled White Cranberry'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">140</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">35</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Teavana® Shaken Iced Black Tea'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">30</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">8</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}], <span class="st">'Teavana® Shaken Iced Black Tea Lemonade'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">70</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">17</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Teavana® Shaken Iced Green Tea'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">30</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">8</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}], <span class="st">'Teavana® Shaken Iced Green Tea Lemonade'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">70</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">17</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}], <span class="st">'Teavana® Shaken Iced Passion Tango™ Tea'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">30</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">8</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}], <span class="st">'Teavana® Shaken Iced Passion Tango™ Tea Lemonade'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">90</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">24</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Teavana® Shaken Iced Peach Green Tea'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">60</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">15</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Starbucks Refreshers™ Raspberry Pomegranate'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">90</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">27</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Starbucks Refreshers™ Strawberry Lemonade'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">90</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">27</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Starbucks® Doubleshot Protein Dark Chocolate'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">210</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">2.5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">33</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">2</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">20</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">115</span>}], <span class="st">'Starbucks® Doubleshot Protein Vanilla'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">200</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">2.5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">34</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">2</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">20</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">120</span>}], <span class="st">'Starbucks® Iced Coffee Caramel'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">60</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">13</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Starbucks® Iced Coffee Light Sweetened'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">50</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">11</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Starbucks® Iced Coffee Unsweetened'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">2</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Blonde Roast'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Clover® Brewed Coffee'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Decaf Pike Place® Roast'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Featured Dark Roast'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Nariño 70 Cold Brew'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">15</span>}], <span class="st">'Nariño 70 Cold Brew with Milk'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Nitro Cold Brew'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Nitro Cold Brew with Sweet Cream'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">70</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">5.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">20</span>}], <span class="st">'Pike Place® Roast'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}], <span class="st">'Vanilla Sweet Cream Cold Brew'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">110</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">6.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">14</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">25</span>}], <span class="st">'Hot Chocolate'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">320</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">9.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">47</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">4</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">14</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">160</span>}], <span class="st">'Starbucks® Signature Hot Chocolate'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">430</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">26.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">45</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">12</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">115</span>}], <span class="st">'Caffè Latte'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">190</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">7.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">19</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">13</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">170</span>}], <span class="st">'Caffè Mocha'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">290</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">8.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">42</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">4</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">13</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">140</span>}], <span class="st">'Cappuccino'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">120</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">4.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">12</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">8</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">100</span>}], <span class="st">'Caramel Macchiato'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">250</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">7.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">35</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">150</span>}], <span class="st">'Cinnamon Dolce Latte'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">260</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">6.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">40</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">11</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">150</span>}], <span class="st">'Coconutmilk Mocha Macchiato'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">250</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">9.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">32</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">12</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">180</span>}], <span class="st">'Flat White'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">180</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">7.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">18</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">12</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">160</span>}], <span class="st">'Iced Caffè Latte'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">130</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">4.5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">13</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">8</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">115</span>}], <span class="st">'Iced Caffè Mocha'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">230</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">6.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">36</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">4</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">9</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">90</span>}], <span class="st">'Iced Caramel Macchiato'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">250</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">7.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">37</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">150</span>}], <span class="st">'Iced Cinnamon Dolce Latte'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">200</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">4.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">34</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">7</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">95</span>}], <span class="st">'Iced Coconutmilk Mocha Macchiato'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">260</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">9.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">34</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">11</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">180</span>}], <span class="st">'Iced Vanilla Latte'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">190</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">4.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">30</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">7</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">100</span>}], <span class="st">'Iced White Chocolate Mocha'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">300</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">8.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">47</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">190</span>}], <span class="st">'Latte Macchiato'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">190</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">7.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">19</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">12</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">160</span>}], <span class="st">'Starbucks Doubleshot® on Ice Beverage'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">45</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">1.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">3</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">40</span>}], <span class="st">'Vanilla Latte'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">250</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">6.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">37</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">12</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">150</span>}], <span class="st">'White Chocolate Mocha'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">360</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">11.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">53</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">14</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">240</span>}], <span class="st">'Cinnamon Dolce Frappuccino® Blended Coffee'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">350</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">4.5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">64</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">15</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}], <span class="st">'Coffee Light Frappuccino® Blended Coffee'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">110</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">24</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">3</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">200</span>}], <span class="st">'Mocha Frappuccino® Blended Coffee'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">280</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">2.5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">60</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">2</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">4</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">220</span>}], <span class="st">'Mocha Light Frappuccino® Blended Coffee'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">140</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">0.5</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">28</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">1</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">4</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">180</span>}], <span class="st">'Cinnamon Dolce Crème'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">200</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">6.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">28</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">135</span>}], <span class="st">'Vanilla Crème'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">200</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">6.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">28</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">10</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">135</span>}], <span class="st">'Chocolate Smoothie'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">320</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">5.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">53</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">8</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">20</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">170</span>}], <span class="st">'Strawberry Smoothie'</span>: [{<span class="st">'Nutrition_type'</span>: <span class="st">'Calories'</span>, <span class="st">'value'</span>: <span class="dv">300</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fat'</span>, <span class="st">'value'</span>: <span class="fl">2.0</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Carb'</span>, <span class="st">'value'</span>: <span class="dv">60</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Fiber'</span>, <span class="st">'value'</span>: <span class="dv">7</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Protein'</span>, <span class="st">'value'</span>: <span class="dv">16</span>}, {<span class="st">'Nutrition_type'</span>: <span class="st">'Sodium'</span>, <span class="st">'value'</span>: <span class="dv">130</span>}]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A3.1: The nested data structure of the object starbucks_drinks_nutrition</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Data structure: </span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># starbucks_drinks_nutrition is a dictionary,  specific structure is listed below: </span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>starbucks_drinks_nutrition_structure <span class="op">=</span> {</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Drink Name 1'</span>: [</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        {<span class="st">'Nutrition_type'</span>: <span class="st">'Nutrition_type_name'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>},</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        {<span class="st">'Nutrition_type'</span>: <span class="st">'Nutrition_type_name'</span>, <span class="st">'value'</span>: <span class="fl">0.0</span>},</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># ... other nutrition info ...</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... other drinks ...</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="a3.1" class="level2">
+<h2 class="anchored" data-anchor-id="a3.1">A3.1</h2>
+<p>starbucks_drinks_nutrition, is a dictionary where each key is a string representing the name of a Starbucks drink, and each value is a list of dictionaries. Each dictionary within the list contains two key-value pairs: ‘Nutrition_type’ and ‘value’, which represent the type of nutrition fact (e.g., Calories, Fat, Carb, etc.) and its corresponding value.</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A3.2: print the name and carb content of all drinks that have a carb content of more than 50 units</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>high_carb <span class="op">=</span> []</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> drink, nutrition <span class="kw">in</span> starbucks_drinks_nutrition.items(): </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> type_nutrition <span class="kw">in</span> nutrition: </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> type_nutrition[<span class="st">'Nutrition_type'</span>] <span class="op">==</span> <span class="st">'Carb'</span> <span class="kw">and</span> type_nutrition[<span class="st">'value'</span>] <span class="op">&gt;</span> <span class="dv">50</span>:</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>            high_carb.append((drink, type_nutrition[<span class="st">'value'</span>])) </span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> drink, carb <span class="kw">in</span> high_carb:</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>drink<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>carb<span class="sc">}</span><span class="ss">g of carbohydrates"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>White Chocolate Mocha: 53g of carbohydrates
+Cinnamon Dolce Frappuccino® Blended Coffee: 64g of carbohydrates
+Mocha Frappuccino® Blended Coffee: 60g of carbohydrates
+Chocolate Smoothie: 53g of carbohydrates
+Strawberry Smoothie: 60g of carbohydrates</code></pre>
+</div>
+</div>
+</section>
+<section id="a3.2" class="level2">
+<h2 class="anchored" data-anchor-id="a3.2">A3.2</h2>
+<p><strong>White Chocolate Mocha</strong>: 53g of carbohydrates</p>
+<p><strong>Cinnamon Dolce Frappuccino® Blended Coffee</strong>: 64g of carbohydrates</p>
+<p><strong>Mocha Frappuccino® Blended Coffee</strong>: 60g of carbohydrates</p>
+<p><strong>Chocolate Smoothie</strong>: 53g of carbohydrates</p>
+<p><strong>Strawberry Smoothie</strong>: 60g of carbohydrates</p>
+</section>
+</section>
+<section id="a4" class="level1">
+<h1>A4</h1>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A4.1: load data </span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># load  external data</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_json(<span class="st">"https://raw.githubusercontent.com/cwkenwaysun/TEDmap/master/data/TED_Talks.json"</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>data.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">speaker</th>
+<th data-quarto-table-cell-role="th">headline</th>
+<th data-quarto-table-cell-role="th">URL</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">transcript_URL</th>
+<th data-quarto-table-cell-role="th">month_filmed</th>
+<th data-quarto-table-cell-role="th">year_filmed</th>
+<th data-quarto-table-cell-role="th">event</th>
+<th data-quarto-table-cell-role="th">duration</th>
+<th data-quarto-table-cell-role="th">date_published</th>
+<th data-quarto-table-cell-role="th">tags</th>
+<th data-quarto-table-cell-role="th">newURL</th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">views</th>
+<th data-quarto-table-cell-role="th">rates</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>7</td>
+<td>David Pogue</td>
+<td>Simplicity sells</td>
+<td>http://www.ted.com/talks/view/id/7</td>
+<td>New York Times columnist David Pogue takes aim...</td>
+<td>http://www.ted.com/talks/view/id/7/transcript?...</td>
+<td>2</td>
+<td>2006</td>
+<td>TED2006</td>
+<td>0:21:26</td>
+<td>6/27/06</td>
+<td>simplicity,computers,software,interface design...</td>
+<td>https://www.ted.com/talks/david_pogue_says_sim...</td>
+<td>2006-06-27</td>
+<td>1646773</td>
+<td>[{'id': 7, 'name': 'Funny', 'count': 968}, {'i...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>6</td>
+<td>Craig Venter</td>
+<td>Sampling the ocean's DNA</td>
+<td>http://www.ted.com/talks/view/id/6</td>
+<td>Genomics pioneer Craig Venter takes a break fr...</td>
+<td>http://www.ted.com/talks/view/id/6/transcript?...</td>
+<td>7</td>
+<td>2005</td>
+<td>TEDGlobal 2005</td>
+<td>0:16:51</td>
+<td>2004/05/07</td>
+<td>biotech,invention,oceans,genetics,DNA,biology,...</td>
+<td>https://www.ted.com/talks/craig_venter_on_dna_...</td>
+<td>2004-05-07</td>
+<td>562625</td>
+<td>[{'id': 3, 'name': 'Courageous', 'count': 21},...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>4</td>
+<td>Burt Rutan</td>
+<td>The real future of space exploration</td>
+<td>http://www.ted.com/talks/view/id/4</td>
+<td>In this passionate talk, legendary spacecraft ...</td>
+<td>http://www.ted.com/talks/view/id/4/transcript?...</td>
+<td>2</td>
+<td>2006</td>
+<td>TED2006</td>
+<td>0:19:37</td>
+<td>10/25/06</td>
+<td>aircraft,flight,industrial design,NASA,rocket ...</td>
+<td>https://www.ted.com/talks/burt_rutan_sees_the_...</td>
+<td>2006-10-25</td>
+<td>2046869</td>
+<td>[{'id': 3, 'name': 'Courageous', 'count': 169}...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>Ashraf Ghani</td>
+<td>How to rebuild a broken state</td>
+<td>http://www.ted.com/talks/view/id/3</td>
+<td>Ashraf Ghani's passionate and powerful 10-minu...</td>
+<td>http://www.ted.com/talks/view/id/3/transcript?...</td>
+<td>7</td>
+<td>2005</td>
+<td>TEDGlobal 2005</td>
+<td>0:18:45</td>
+<td>10/18/06</td>
+<td>corruption,poverty,economics,investment,milita...</td>
+<td>https://www.ted.com/talks/ashraf_ghani_on_rebu...</td>
+<td>2006-10-18</td>
+<td>814554</td>
+<td>[{'id': 3, 'name': 'Courageous', 'count': 140}...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>Chris Bangle</td>
+<td>Great cars are great art</td>
+<td>http://www.ted.com/talks/view/id/5</td>
+<td>American designer Chris Bangle explains his ph...</td>
+<td>http://www.ted.com/talks/view/id/5/transcript?...</td>
+<td>2</td>
+<td>2002</td>
+<td>TED2002</td>
+<td>0:20:04</td>
+<td>2004/05/07</td>
+<td>cars,industrial design,transportation,inventio...</td>
+<td>https://www.ted.com/talks/chris_bangle_says_gr...</td>
+<td>2004-05-07</td>
+<td>870950</td>
+<td>[{'id': 1, 'name': 'Beautiful', 'count': 89}, ...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<section id="a4.1" class="level2">
+<h2 class="anchored" data-anchor-id="a4.1">A4.1</h2>
+<p><strong>Please find the above</strong></p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.2: Find the total number of talks</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>data_2006_2017 <span class="op">=</span> [(data[<span class="st">'year_filmed'</span>] <span class="op">&gt;=</span> <span class="dv">2006</span>) <span class="op">&amp;</span> (data[<span class="st">'year_filmed'</span>] <span class="op">&lt;=</span> <span class="dv">2017</span>)]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>2474</code></pre>
+</div>
+</div>
+</section>
+<section id="a4.2" class="level2">
+<h2 class="anchored" data-anchor-id="a4.2">A4.2</h2>
+<p><strong>There are 2474 talks in the dataset</strong></p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#4.3: find the most viewed talk</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>max_views <span class="op">=</span> data[<span class="st">'views'</span>].idxmax()</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>pop_talk <span class="op">=</span> data.loc[max_views]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-scrolled="true" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A4.3: The talk with the highest number of views has the following details:</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Headline: </span><span class="sc">{</span>pop_talk [<span class="st">'headline'</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Speaker: </span><span class="sc">{</span>pop_talk [<span class="st">'speaker'</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Year Filmed: </span><span class="sc">{</span>pop_talk [<span class="st">'year_filmed'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A4.3: The talk with the highest number of views has the following details:
+Headline: Do schools kill creativity?
+Speaker: Ken Robinson
+Year Filmed: 2006</code></pre>
+</div>
+</div>
+</section>
+<section id="a4.3" class="level2">
+<h2 class="anchored" data-anchor-id="a4.3">A4.3</h2>
+<p><strong>The talk with the highest number of views has the following details:</strong></p>
+<p>Headline: Do schools kill creativity?</p>
+<p>Speaker: Ken Robinson</p>
+<p>Year Filmed: 2006</p>
+<div class="cell" data-execution_count="170">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.4: Compare with the average</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>average_views <span class="op">=</span> data[<span class="st">'views'</span>].mean()</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>high_ave <span class="op">=</span> data[data[<span class="st">'views'</span>] <span class="op">&gt;</span> average_views]</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>low_ave <span class="op">=</span> data[data[<span class="st">'views'</span>] <span class="op">&lt;</span> average_views]</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>equal_view_count <span class="op">=</span> <span class="bu">sum</span>(data[<span class="st">'views'</span>] <span class="op">==</span> average_views)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(equal_view_count)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(low_ave) <span class="op">&gt;</span> <span class="bu">len</span>(high_ave):</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The majority of talks have less views than average."</span>)</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The majority of talks have more views than the average."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+The majority of talks have less views than average.</code></pre>
+</div>
+</div>
+</section>
+<section id="a4.4" class="level2">
+<h2 class="anchored" data-anchor-id="a4.4">A4.4</h2>
+<p><strong>The majority of talks have less views than average.</strong> The average number of views is found using mean() function. Then, I created two DataFrames: one for talks with below-average views and one for talks with above-average views. The majority is determined by comparing the lengths of these DataFrames, and the results are printed out with justification.</p>
+<div class="cell" data-execution_count="171">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A.4.5: 25% of the talks have more views than the average number of views for a talk?</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>higher_than_ave <span class="op">=</span> (<span class="bu">len</span>(high_ave) <span class="op">/</span> <span class="bu">len</span>(data)) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>higher_than_ave</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="171">
+<pre><code>25.060630557801133</code></pre>
+</div>
+</div>
+</section>
+<section id="a4.5" class="level2">
+<h2 class="anchored" data-anchor-id="a4.5">A4.5</h2>
+<p><strong>Yes, more than 25% of the talks have higher views than the average.</strong> I divide the length of the dataset by the length of the high_ave DataFrame. The ratio 25.060630557801133% is greater than 25%. Therefore, at least 25% of the talks have more views than the average number of views for a talk</p>
+<div class="cell" data-execution_count="172">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.6: create a new column in the dataset that contains the votes obtained by the tedtalk in that category. Print the first 5 rows of the updated dataset.</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> data.iterrows():</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> rate_dict <span class="kw">in</span> row[<span class="st">'rates'</span>]:</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extracting category and votes and creating new columns</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        category <span class="op">=</span> rate_dict[<span class="st">'name'</span>]</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>        votes <span class="op">=</span> rate_dict[<span class="st">'count'</span>]</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>        data.loc[index, category] <span class="op">=</span> votes</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   id       speaker                              headline  \
+0   7   David Pogue                      Simplicity sells   
+1   6  Craig Venter              Sampling the ocean's DNA   
+2   4    Burt Rutan  The real future of space exploration   
+3   3  Ashraf Ghani         How to rebuild a broken state   
+4   5  Chris Bangle              Great cars are great art   
+
+                                  URL  \
+0  http://www.ted.com/talks/view/id/7   
+1  http://www.ted.com/talks/view/id/6   
+2  http://www.ted.com/talks/view/id/4   
+3  http://www.ted.com/talks/view/id/3   
+4  http://www.ted.com/talks/view/id/5   
+
+                                         description  \
+0  New York Times columnist David Pogue takes aim...   
+1  Genomics pioneer Craig Venter takes a break fr...   
+2  In this passionate talk, legendary spacecraft ...   
+3  Ashraf Ghani's passionate and powerful 10-minu...   
+4  American designer Chris Bangle explains his ph...   
+
+                                      transcript_URL  month_filmed  \
+0  http://www.ted.com/talks/view/id/7/transcript?...             2   
+1  http://www.ted.com/talks/view/id/6/transcript?...             7   
+2  http://www.ted.com/talks/view/id/4/transcript?...             2   
+3  http://www.ted.com/talks/view/id/3/transcript?...             7   
+4  http://www.ted.com/talks/view/id/5/transcript?...             2   
+
+   year_filmed           event duration  ... Unconvincing Longwinded  \
+0         2006         TED2006  0:21:26  ...        104.0       78.0   
+1         2005  TEDGlobal 2005  0:16:51  ...          3.0        8.0   
+2         2006         TED2006  0:19:37  ...         77.0       70.0   
+3         2005  TEDGlobal 2005  0:18:45  ...         35.0       21.0   
+4         2002         TED2002  0:20:04  ...         81.0      100.0   
+
+  Informative Inspiring  Fascinating Confusing     OK  Persuasive  \
+0       399.0     230.0        166.0      27.0  146.0       230.0   
+1       199.0      73.0        163.0      23.0   10.0        23.0   
+2       337.0     501.0        247.0      23.0  115.0       202.0   
+3       218.0     114.0         44.0      25.0   51.0       112.0   
+4        88.0     163.0         76.0      32.0   64.0        28.0   
+
+   Jaw-dropping  Obnoxious  
+0          54.0      142.0  
+1          74.0        0.0  
+2          63.0       47.0  
+3          35.0       11.0  
+4           9.0       45.0  
+
+[5 rows x 30 columns]</code></pre>
+</div>
+</div>
+</section>
+<section id="a4.6" class="level2">
+<h2 class="anchored" data-anchor-id="a4.6">A4.6</h2>
+<p><strong>The new columns corresponding to categories in rates are created above.</strong></p>
+<div class="cell" data-execution_count="173">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A4.7: The most confusing talk" </span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>idx_max_confusing <span class="op">=</span> data[<span class="st">'Confusing'</span>].idxmax()</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>most_confusing_talk <span class="op">=</span> data.loc[idx_max_confusing, <span class="st">'headline'</span>]</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>most_confusing_talk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="173">
+<pre><code>'I believe we evolved from aquatic apes'</code></pre>
+</div>
+</div>
+</section>
+<section id="a.4.7" class="level2">
+<h2 class="anchored" data-anchor-id="a.4.7">A.4.7</h2>
+<p><strong>The talk with the highest number of ‘Confusing’ votes is:I believe we evolved from aquatic apes</strong></p>
+<div class="cell" data-execution_count="174">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.8： Highest fascinating count </span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_fascinating_percentage(rates):</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    total_votes <span class="op">=</span> <span class="bu">sum</span>(rate[<span class="st">'count'</span>] <span class="cf">for</span> rate <span class="kw">in</span> rates)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    fascinating_votes <span class="op">=</span> <span class="bu">next</span>((rate[<span class="st">'count'</span>] <span class="cf">for</span> rate <span class="kw">in</span> rates <span class="cf">if</span> rate[<span class="st">'name'</span>] <span class="op">==</span> <span class="st">'Fascinating'</span>), <span class="dv">0</span>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (fascinating_votes <span class="op">/</span> total_votes) <span class="op">*</span> <span class="dv">100</span> <span class="cf">if</span> total_votes <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'fascinating_percentage'</span>] <span class="op">=</span> data[<span class="st">'rates'</span>].<span class="bu">apply</span>(get_fascinating_percentage)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>highest_fascinating_talk <span class="op">=</span> data.loc[data[<span class="st">'fascinating_percentage'</span>].idxmax()]</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(highest_fascinating_talk[[<span class="st">'speaker'</span>, <span class="st">'headline'</span>, <span class="st">'fascinating_percentage'</span>, <span class="st">'date'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>speaker                                      Carolyn Porco
+headline                  Could a Saturn moon harbor life?
+fascinating_percentage                           43.887423
+date                                   2009-05-21 00:00:00
+Name: 443, dtype: object</code></pre>
+</div>
+</div>
+</section>
+<section id="a4.8" class="level2">
+<h2 class="anchored" data-anchor-id="a4.8">A4.8</h2>
+<p>The highest percentage of votes in the Fascinating category.</p>
+<p><strong>Headline: Could a Saturn moon harbor life?</strong></p>
+<p><strong>Year of the talk: 2009</strong></p>
+</section>
+</section>
+<section id="a5" class="level1">
+<h1>A5</h1>
+<div class="cell" data-execution_count="175">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5.1: load data</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'/Users/jinwens/Downloads/univ.txt'</span>, delimiter<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    Name       Location  Rank  Tuition and fees  \
+0   Princeton University  Princeton, NJ   1.0           45320.0   
+1     Harvard University  Cambridge, MA   2.0           47074.0   
+2  University of Chicago    Chicago, IL   3.0           52491.0   
+3        Yale University  New Haven, CT   3.0           49480.0   
+4    Columbia University   New York, NY   5.0           55056.0   
+
+   Undergrad Enrollment  
+0                5402.0  
+1                6699.0  
+2                5844.0  
+3                5532.0  
+4                6102.0  </code></pre>
+</div>
+</div>
+<section id="a5.1" class="level2">
+<h2 class="anchored" data-anchor-id="a5.1">A5.1</h2>
+<p><strong>Data is loaded above.</strong></p>
+<div class="cell" data-execution_count="176">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5.2: Find summary statistics of the data</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Rank  Tuition and fees  Undergrad Enrollment
+count  231.000000        231.000000            231.000000
+mean   113.982684      33769.246753          14946.619048
+std     65.995518      10756.733516          10569.664095
+min      1.000000       5300.000000           1001.000000
+25%     56.000000      25693.000000           6238.500000
+50%    111.000000      31608.000000          12949.000000
+75%    171.000000      42721.000000          22145.500000
+max    220.000000      55056.000000          54513.000000</code></pre>
+</div>
+</div>
+</section>
+<section id="a5.2" class="level2">
+<h2 class="anchored" data-anchor-id="a5.2">A5.2</h2>
+<p><strong>Summary of the data is presented above.</strong></p>
+<div class="cell" data-execution_count="177">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5.3: How many universities are there in the data set?</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>num_universities <span class="op">=</span> data.shape[<span class="dv">0</span>]</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'There are </span><span class="sc">{</span>num_universities<span class="sc">}</span><span class="ss"> universities in the dataset.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>There are 231 universities in the dataset.</code></pre>
+</div>
+</div>
+</section>
+<section id="a5.3" class="level2">
+<h2 class="anchored" data-anchor-id="a5.3">A5.3</h2>
+<p><strong>There are 231 universities in the dataset.</strong></p>
+<div class="cell" data-execution_count="178">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A5.4: Estimate the maximum Tuition and fees among universities that are in the bottom 25% when ranked by total tuition and fees.</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>bottom_25_threshold <span class="op">=</span> data[<span class="st">'Tuition and fees'</span>].quantile(<span class="fl">0.25</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>max_tuition_bottom_25 <span class="op">=</span> data[data[<span class="st">'Tuition and fees'</span>] <span class="op">&lt;=</span> bottom_25_threshold][<span class="st">'Tuition and fees'</span>].<span class="bu">max</span>()</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The maximum tuition and fees among the bottom 25% of universities is </span><span class="sc">{</span>max_tuition_bottom_25<span class="sc">}</span><span class="ss">.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The maximum tuition and fees among the bottom 25% of universities is 25673.0.</code></pre>
+</div>
+</div>
+</section>
+<section id="a5.4" class="level2">
+<h2 class="anchored" data-anchor-id="a5.4">A5.4</h2>
+<p><strong>The maximum tuition and fees among the bottom 25% of universities is 25673.0.</strong></p>
+<div class="cell" data-scrolled="true" data-execution_count="179">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A5.5: How many universities share the ranking of 220</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>num_universities_rank_220 <span class="op">=</span> data[data[<span class="st">'Rank'</span>] <span class="op">==</span> <span class="dv">220</span>].shape[<span class="dv">0</span>]</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>num_universities_rank_220<span class="sc">}</span><span class="ss"> universities share the ranking of 220.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>12 universities share the ranking of 220.</code></pre>
+</div>
+</div>
+</section>
+<section id="a5.5" class="level2">
+<h2 class="anchored" data-anchor-id="a5.5">A5.5</h2>
+<p><strong>12 universities share the ranking of 220.</strong></p>
+</section>
+<section id="a5.6" class="level2">
+<h2 class="anchored" data-anchor-id="a5.6">A5.6</h2>
+<p>No, determining the mean “Tuition and fees” specifically for undergraduate students in the US from the summary statistics is not feasible. The summary statistics merely provide an average of “Tuition and fees” across all educational levels at universities.</p>
+<div class="cell" data-execution_count="180">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A5.7: Find the average Tuition and fees for an undergrad student in the US.</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>total_tuition_fees <span class="op">=</span> (data[<span class="st">'Tuition and fees'</span>] <span class="op">*</span> data[<span class="st">'Undergrad Enrollment'</span>]).<span class="bu">sum</span>()</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>total_undergrad_enrollment <span class="op">=</span> data[<span class="st">'Undergrad Enrollment'</span>].<span class="bu">sum</span>()</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>average_tuition_per_undergrad <span class="op">=</span> total_tuition_fees <span class="op">/</span> total_undergrad_enrollment</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the result</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The average Tuition and fees per undergrad student in the US is $</span><span class="sc">{</span>average_tuition_per_undergrad<span class="sc">}</span><span class="ss">.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The average Tuition and fees per undergrad student in the US is $30845.32903298868.</code></pre>
+</div>
+</div>
+</section>
+<section id="a5.7" class="level2">
+<h2 class="anchored" data-anchor-id="a5.7">A5.7</h2>
+<p><strong>The mean Tuition and fees for an undergrad student in the US is $30845.32903298868.</strong></p>
+</section>
+</section>
+<section id="a6" class="level1">
+<h1>A6</h1>
+<section id="csv-comma-separated-values" class="level4">
+<h4 class="anchored" data-anchor-id="csv-comma-separated-values">1. CSV (Comma-Separated Values)</h4>
+<ul>
+<li><strong>Advantage:</strong>
+<ul>
+<li><strong>Interoperability:</strong> CSV files are universally recognized and can be opened by a wide range of software, from spreadsheet applications like Microsoft Excel to database systems. This makes it a popular choice for data exchange between different platforms.</li>
+</ul></li>
+<li><strong>Disadvantage:</strong>
+<ul>
+<li><strong>Flat Structure:</strong> CSV files inherently support only two-dimensional, tabular data. They cannot handle hierarchical or multi-dimensional data as efficiently as JSON. This makes them less suitable for complex data structures.</li>
+</ul></li>
+</ul>
+</section>
+<section id="json-javascript-object-notation" class="level4">
+<h4 class="anchored" data-anchor-id="json-javascript-object-notation">2. JSON (JavaScript Object Notation)</h4>
+<ul>
+<li><strong>Advantage:</strong>
+<ul>
+<li><strong>Flexibility:</strong> JSON supports hierarchical data structures, allowing for nested arrays and objects. This makes it suitable for representing complex data structures, especially in applications that require data interchange between a server and a web application.</li>
+</ul></li>
+<li><strong>Disadvantage:</strong>
+<ul>
+<li><strong>Size:</strong> For large datasets, JSON can be more verbose than CSV, leading to larger file sizes. This can be a concern when storage or data transmission efficiency is crucial.</li>
+</ul></li>
+</ul>
+</section>
+<section id="txt-text-file" class="level4">
+<h4 class="anchored" data-anchor-id="txt-text-file">3. TXT (Text File)</h4>
+<ul>
+<li><strong>Advantage:</strong>
+<ul>
+<li><strong>Unstructured Freedom:</strong> TXT files are free-form, allowing users to store data in any format. This can be useful for custom data storage needs or for human-readable notes and documents.</li>
+</ul></li>
+<li><strong>Disadvantage:</strong>
+<ul>
+<li><strong>Lack of Standardization:</strong> Since TXT files don’t have a standard structure, parsing them can be challenging. Unlike CSV and JSON, which have well-defined formats, reading data from TXT files might require custom logic, especially if the structure isn’t consistent.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
